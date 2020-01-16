@@ -1,18 +1,27 @@
 [
   {
-    "Name": "Paul",
-    "Password": "hello",
+    "Prenom": "Paul",
+    "Nom": "Paul",
+    "Password": "hello"
   },
   {
-    "Name": "Benoit",
-    "Password": "hello",
+    "Prenom": "Benoit",
+    "Nom": "Benoit",
+    "Password": "hello"
   },
   {
-    "Name": "Kevin",
-    "Password": "hello",
+    "Prenom": "Kevin",
+    "Nom": "kevin",
+    "Password": "hello"
   },
   {
-    "Name": "Michel",
-    "Password": "hello",
+    "Prenom": "Michel",
+    "Nom": "Michel",
+    "Password": "hello"
+  },
+  {
+    "Prenom": "admin",
+    "Nom": "admin",
+    "Password": "admin"
   }
 ]

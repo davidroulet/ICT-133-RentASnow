@@ -52,8 +52,6 @@
                     echo $_SESSION["Prenom"];
                     echo " ";
                     echo $_SESSION["Nom"];
-                }else{
-
                 };
                 ?>
 
@@ -67,11 +65,15 @@
                         <?php
                         if(isset($_SESSION['Prenom']) && isset($_SESSION['Nom']))
                         {
+                            if($_SESSION['Prenom']=="admin"&&$_SESSION['admin']){
+                                echo '<li><a href="index.php?action=NewAcc">Nouveau Compte</a></li>';
+                            }
                             echo '<li><a href="index.php?action=DisConnect">Déconextion</a></li>';
                             echo '<li><a href="index.php?action=Compte">Compte</a></li>';
                         }else{
                             echo '<li><a href="index.php?action=Connect">Connection</a></li>';
                         };
+
                         ?>
 
                     </ul>
