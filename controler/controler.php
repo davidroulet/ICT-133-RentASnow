@@ -17,15 +17,15 @@ function Connect(){
     require_once 'view/Connect.php';
 }
 function TryConnect(){
-    if (isset($_POST['Prenom']) && isset($_POST['Nom'])){
+    if (isset($_POST['Prenom']) && isset($_POST['Nom'])&&isset($_POST['Password'])){
         $_SESSION['Prenom']=$_POST['Prenom'];
         $_SESSION['Nom']=$_POST['Nom'];
-
+        $_SESSION['Password']=$_POST['Password'];
     }
     require_once 'view/home.php';
 }
 function DisConnect(){
-    session_destroy();
+    session_unset();
     require_once 'view/home.php';
 }
 ?>

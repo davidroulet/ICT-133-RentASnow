@@ -50,6 +50,7 @@
                 if(isset($_SESSION['Prenom']) && isset($_SESSION['Nom']))
                 {
                     echo $_SESSION["Prenom"];
+                    echo " ";
                     echo $_SESSION["Nom"];
                 }else{
 

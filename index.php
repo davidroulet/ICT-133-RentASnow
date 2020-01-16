@@ -22,7 +22,6 @@ home();
         TryConnect();
         break;
     case"DisConnect":
-        session_destroy();
         DisConnect();
         break;
     default:
