@@ -57,5 +57,7 @@ function Compte()
 {
     require_once 'view/Compte.php';
 }
+function NewAcc(){
 
+}
 ?>

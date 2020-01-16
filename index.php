@@ -27,6 +27,9 @@ home();
     case"Compte":
         Compte();
         break;
+    case "NewAcc":
+        NewAcc();
+        break;
     default:
  home();
         break;

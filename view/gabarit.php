@@ -65,7 +65,7 @@
                         <?php
                         if(isset($_SESSION['Prenom']) && isset($_SESSION['Nom']))
                         {
-                            if($_SESSION['Prenom']=="admin"&&$_SESSION['admin']){
+                            if($_SESSION['Prenom']=="admin"&&$_SESSION['Nom']=="admin"){
                                 echo '<li><a href="index.php?action=NewAcc">Nouveau Compte</a></li>';
                             }
                             echo '<li><a href="index.php?action=DisConnect">Déconextion</a></li>';
