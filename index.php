@@ -24,6 +24,9 @@ home();
     case"DisConnect":
         DisConnect();
         break;
+    case"Compte":
+        Compte();
+        break;
     default:
  home();
         break;

@@ -28,4 +28,7 @@ function DisConnect(){
     session_unset();
     require_once 'view/home.php';
 }
+function Compte(){
+
+}
 ?>

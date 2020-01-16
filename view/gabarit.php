@@ -68,6 +68,7 @@
                         if(isset($_SESSION['Prenom']) && isset($_SESSION['Nom']))
                         {
                             echo '<li><a href="index.php?action=DisConnect">Déconextion</a></li>';
+                            echo '<li><a href="index.php?action=Compte">Compte</a></li>';
                         }else{
                             echo '<li><a href="index.php?action=Connect">Connection</a></li>';
                         };
