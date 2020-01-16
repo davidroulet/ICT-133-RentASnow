@@ -8,4 +8,24 @@ function home()
     $news = getNews();
     require_once 'view/home.php';
 }
+function displaySnows(){
+    $snows=getSnows();
+    require_once 'view/DisplaySnow.php';
+
+}
+function Connect(){
+    require_once 'view/Connect.php';
+}
+function TryConnect(){
+    if (isset($_POST['Prenom']) && isset($_POST['Nom'])){
+        $_SESSION['Prenom']=$_POST['Prenom'];
+        $_SESSION['Nom']=$_POST['Nom'];
+
+    }
+    require_once 'view/home.php';
+}
+function DisConnect(){
+    session_destroy();
+    require_once 'view/home.php';
+}
 ?>
