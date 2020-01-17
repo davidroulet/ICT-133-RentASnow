@@ -62,8 +62,13 @@ function Compte()
     require_once 'view/Compte.php';
 }
 function NewAcc(){
+
+    $liste = getName();
+    $Lastid =$liste.sizeof($liste);
+    $Lastid++;
+
+    $liste[] = ["id"=>substr($Lastid,5),"Prenom"=>$_POST["PrenomR"],"Nom"=>$_POST["NomR"],"Password"=>$_POST["PasswordR"]];
+    InsertAcc($liste);
     require_once 'view/NewAcc.php';
-    $data="teste";
-    InsertAcc($data);
 }
 ?>

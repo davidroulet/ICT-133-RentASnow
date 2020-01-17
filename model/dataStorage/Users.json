@@ -28,5 +28,17 @@
     "Prenom": "admin",
     "Nom": "admin",
     "Password": "admin"
+  },
+  {
+    "id": 6,
+    "Prenom": "Roulet",
+    "Nom": "David",
+    "Password": "David"
+  },
+  {
+    "id": "7",
+    "Prenom": "Chris",
+    "Nom": "Pardo",
+    "Password": "mdp"
   }
 ]
