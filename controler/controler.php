@@ -27,23 +27,27 @@ function TryConnect()
 
     if (isset($_POST['Prenom']) && isset($_POST['Nom']) && isset($_POST['Password'])) {
 
-        $_SESSION['Prenom'] = $_POST['Prenom'];
-        $_SESSION['Nom'] = $_POST['Nom'];
-        $_SESSION['Password'] = $_POST['Password'];
+
 
 
         foreach ($Accounts as $account) {
-            if ($account['Nom'] == $_SESSION['Nom']) {
-                if ($account['Prenom'] == $_SESSION['Prenom']) {
-                    if ($account['Password'] == $_SESSION['Password']) {
+            if ($account['Nom'] == $_POST['Prenom']) {
+                if ($account['Prenom'] == $_POST['Nom']) {
+                    if ($account['Password'] == $_POST['Password']) {
+                        $_SESSION['Prenom'] = $_POST['Prenom'];
+                        $_SESSION['Nom'] = $_POST['Nom'];
+                        $_SESSION['Password'] = $_POST['Password'];
                         home();
                     }
                 }
             }
         }
     }
-    session_unset();
+if(!isset($_SESSION['Nom'])&&!isset($_SESSION['Password'])){
     require_once 'view/Connect.php';
+}
+
+
 
 }
 
@@ -58,6 +62,8 @@ function Compte()
     require_once 'view/Compte.php';
 }
 function NewAcc(){
-
+    require_once 'view/NewAcc.php';
+    $data="teste";
+    InsertAcc($data);
 }
 ?>
