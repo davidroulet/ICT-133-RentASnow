@@ -62,13 +62,17 @@ function Compte()
     require_once 'view/Compte.php';
 }
 function NewAcc(){
-
+if(isset($_POST["PrenomR"])&&isset($_POST["NomR"])&&isset($_POST["PasswordR"])&&$_POST["PrenomR"]!=""&&$_POST["NomR"]!=""&&$_POST["PasswordR"]!=""){
     $liste = getName();
     $Lastid =$liste.sizeof($liste);
     $Lastid++;
 
     $liste[] = ["id"=>substr($Lastid,5),"Prenom"=>$_POST["PrenomR"],"Nom"=>$_POST["NomR"],"Password"=>$_POST["PasswordR"]];
     InsertAcc($liste);
+}
     require_once 'view/NewAcc.php';
+    $_POST["PrenomR"]=null;
+    unset($_POST["NomR"]);
+    unset($_POST["PasswordR"]);
 }
 ?>
