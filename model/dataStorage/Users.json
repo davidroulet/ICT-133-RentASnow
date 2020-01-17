@@ -19,7 +19,7 @@
   },
   {
     "id": 4,
-    "Prenom": "Michel",
+    "Prenom": "Pierre",
     "Nom": "Michel",
     "Password": "hello"
   },
@@ -30,16 +30,10 @@
     "Password": "admin"
   },
   {
-    "id": 6,
-    "Prenom": "Roulet",
-    "Nom": "David",
-    "Password": "David"
-  },
-  {
-    "id": "7",
+    "id": 7,
     "Prenom": "Chris",
     "Nom": "Pardo",
-    "Password": "mdp"
+    "Password": "mdp123"
   },
   {
     "id": "8",
@@ -52,5 +46,11 @@
     "Prenom": "David",
     "Nom": "Roulet",
     "Password": "2009"
+  },
+  {
+    "id": "0",
+    "Prenom": "Thibaut",
+    "Nom": "Dalton",
+    "Password": "123"
   }
 ]

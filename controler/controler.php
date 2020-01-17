@@ -31,8 +31,8 @@ function TryConnect()
 
 
         foreach ($Accounts as $account) {
-            if ($account['Nom'] == $_POST['Prenom']) {
-                if ($account['Prenom'] == $_POST['Nom']) {
+            if ($account['Nom'] == $_POST['Nom']) {
+                if ($account['Prenom'] == $_POST['Prenom']) {
                     if ($account['Password'] == $_POST['Password']) {
                         $_SESSION['Prenom'] = $_POST['Prenom'];
                         $_SESSION['Nom'] = $_POST['Nom'];
@@ -63,6 +63,8 @@ function Compte()
 }
 function NewAcc(){
 if(isset($_POST["PrenomR"])&&isset($_POST["NomR"])&&isset($_POST["PasswordR"])&&$_POST["PrenomR"]!=""&&$_POST["NomR"]!=""&&$_POST["PasswordR"]!=""){
+
+
     $liste = getName();
     $Lastid =$liste.sizeof($liste);
     $Lastid++;
