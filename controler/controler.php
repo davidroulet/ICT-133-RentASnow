@@ -1,4 +1,7 @@
 <?php
+//David Roulet
+// 23 01 2020
+// ICT-133
 require_once 'model/model.php';
 
 // This file contains nothing but functions
@@ -28,8 +31,6 @@ function TryConnect()
     if (isset($_POST['Prenom']) && isset($_POST['Nom']) && isset($_POST['Password'])) {
 
 
-
-
         foreach ($Accounts as $account) {
             if ($account['Nom'] == $_POST['Nom']) {
                 if ($account['Prenom'] == $_POST['Prenom']) {
@@ -43,10 +44,9 @@ function TryConnect()
             }
         }
     }
-if(!isset($_SESSION['Nom'])&&!isset($_SESSION['Password'])){
-    require_once 'view/Connect.php';
-}
-
+    if (!isset($_SESSION['Nom']) && !isset($_SESSION['Password'])) {
+        require_once 'view/Connect.php';
+    }
 
 
 }
@@ -61,20 +61,49 @@ function Compte()
 {
     require_once 'view/Compte.php';
 }
-function NewAcc(){
-if(isset($_POST["PrenomR"])&&isset($_POST["NomR"])&&isset($_POST["PasswordR"])&&$_POST["PrenomR"]!=""&&$_POST["NomR"]!=""&&$_POST["PasswordR"]!=""){
+
+function NewAcc()
+{
+    if (isset($_POST["PrenomR"]) && isset($_POST["NomR"]) && isset($_POST["PasswordR"]) && $_POST["PrenomR"] != "" && $_POST["NomR"] != "" && $_POST["PasswordR"] != "") {
 
 
-    $liste = getName();
-    $Lastid =$liste.sizeof($liste);
-    $Lastid++;
+        $liste = getName();
+        $Lastid = 0;
+        foreach ($liste as $user) {
+            $id = $user["id"];
 
-    $liste[] = ["id"=>substr($Lastid,5),"Prenom"=>$_POST["PrenomR"],"Nom"=>$_POST["NomR"],"Password"=>$_POST["PasswordR"]];
-    InsertAcc($liste);
-}
+            if ($id > $Lastid) {
+                $Lastid = $id;
+            }
+        }
+        $Lastid++;
+        $liste[] = ["id" => $Lastid, "Prenom" => $_POST["PrenomR"], "Nom" => $_POST["NomR"], "Password" => $_POST["PasswordR"]];
+        InsertAcc($liste);
+    }
     require_once 'view/NewAcc.php';
-    $_POST["PrenomR"]=null;
+    $_POST["PrenomR"] = null;
     unset($_POST["NomR"]);
     unset($_POST["PasswordR"]);
+}
+function AllUser(){
+    $liste = getName();
+    require_once 'view/AllUser.php';
+}
+function ChangeUser(){
+    $liste = getName();
+    require_once 'view/ChangeUser.php';
+}
+function DelUser(){
+
+    $liste = getName();
+
+    foreach ($liste as $user){
+        if(isset($_POST[$user["id"]])){
+            var_dump($user["id"]);
+            $liste[$user["id"]] = null;
+            SuppAcc($liste);
+        }
+    }
+    ChangeUser();
 }
 ?>

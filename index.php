@@ -1,4 +1,7 @@
 <?php
+//David Roulet
+// 23 01 2020
+// ICT-133
 session_start();
 require "controler/controler.php";
 
@@ -29,6 +32,15 @@ home();
         break;
     case "NewAcc":
         NewAcc();
+        break;
+    case "AllUser":
+        AllUser();
+        break;
+    case "ChangeUser":
+        ChangeUser();
+        break;
+    case "DelUser":
+        DelUser();
         break;
     default:
  home();

@@ -67,6 +67,7 @@
                         {
                             if($_SESSION['Prenom']=="admin"&&$_SESSION['Nom']=="admin"){
                                 echo '<li><a href="index.php?action=NewAcc">Nouveau Compte</a></li>';
+                                echo '<li><a href="index.php?action=AllUser">Liste des Utilisateurs</a></li>';
                             }
                             echo '<li><a href="index.php?action=DisConnect">Déconextion</a></li>';
                             echo '<li><a href="index.php?action=Compte">Compte</a></li>';

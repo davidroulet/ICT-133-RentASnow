@@ -1,4 +1,7 @@
 <?php
+//David Roulet
+// 23 01 2020
+// ICT-133
 ob_start();
 $title = "RentASnow - Accueil";
 ?>
