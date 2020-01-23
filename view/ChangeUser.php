@@ -11,6 +11,7 @@ $title = "RentASnow - AllUser";
         <th>Prenom </th>
         <th>Nom</th>
         <th>id</th>
+
         <th> Btn </th>
         <?php
         foreach ($liste as $user){
@@ -18,7 +19,10 @@ $title = "RentASnow - AllUser";
              echo "<td> $user[Prenom]</td>";
             echo "<td> $user[Nom]</td>";
             echo "<td> $user[id]</td>";
-            echo "<td> <form action=\"/index.php?action=DelUser\" method=\"post\"> <button name=$user[id] class='btn-danger'>Supp</button> </form></td>";
+            if ($user["Nom"]=="admin"){
+            }else {
+                echo "<td> <form action=\"/index.php?action=DelUser\" method=\"post\"> <button name=$user[id] class='btn-danger'>Supp</button> </form></td>";
+            }
 echo "</tr>";
         }
         ?>

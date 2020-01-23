@@ -18,4 +18,7 @@ function InsertAcc($data){
 function SuppAcc($data){
     file_put_contents("model/dataStorage/Users.json",json_encode($data));
 }
+function ChangeAcc($data){
+    file_put_contents("model/dataStorage/Users.json",json_encode($data));
+}
 ?>

@@ -38,6 +38,7 @@ function TryConnect()
                         $_SESSION['Prenom'] = $_POST['Prenom'];
                         $_SESSION['Nom'] = $_POST['Nom'];
                         $_SESSION['Password'] = $_POST['Password'];
+                        $_SESSION['id']=$account["id"];
                         home();
                     }
                 }
@@ -96,14 +97,29 @@ function ChangeUser(){
 function DelUser(){
 
     $liste = getName();
-
+$i=0;
     foreach ($liste as $user){
         if(isset($_POST[$user["id"]])){
-            var_dump($user["id"]);
-            $liste[$user["id"]] = null;
+           unset($liste[$i]) ;
             SuppAcc($liste);
         }
+        $i++;
     }
     ChangeUser();
+}
+function Changemdp(){
+    $liste = getName();
+    $i=0;
+    foreach ($liste as $user){
+        if($user["id"]==$_SESSION["id"]){
+            $liste[$i] = ["id" => $user["id"], "Prenom" => $user["Prenom"], "Nom" => $user["Nom"], "Password" => $_POST["NewPassword"]];
+            ChangeAcc($liste);
+            $_SESSION['Password']=$_POST["NewPassword"];
+            var_dump($user["id"]);
+        }
+        var_dump($_SESSION["id"]);
+        $i++;
+    }
+    Compte();
 }
 ?>

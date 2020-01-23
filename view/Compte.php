@@ -10,8 +10,11 @@ $title = "RentASnow - Compte";
             <div> Prenom: <?=$_SESSION['Prenom'] ?></div>
             <div> Nom: <?= $_SESSION['Nom'] ?></di>
                 <div > Mot de passe: <?= $_SESSION['Password'] ?></div>
-
 </div>
+    <form action="/index.php?action=Changemdp" method="post">
+        <input name="NewPassword">
+        <button type="submit" class="btn-danger">Change</button>
+    </form>
 
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>

@@ -42,6 +42,9 @@ home();
     case "DelUser":
         DelUser();
         break;
+    case "Changemdp":
+        Changemdp();
+        break;
     default:
  home();
         break;
