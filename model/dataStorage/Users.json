@@ -1,1 +1,14 @@
-[{"id":15,"Prenom":"admin","Nom":"admin","Password":"admin"}]
+{
+  "0": {
+    "id": 15,
+    "Prenom": "admin",
+    "Nom": "admin",
+    "Password": "admin"
+  },
+  "2": {
+    "id": 17,
+    "Prenom": "Salut",
+    "Nom": "Simon",
+    "Password": "sdcfsrt"
+  }
+}

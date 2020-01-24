@@ -12,7 +12,7 @@ $title = "RentASnow - Connection";
         Nom:<br>
         <input type="text" name="Nom"><br><br>
         Mot de passe :<br>
-        <input type="text" name="Password"><br><br>
+        <input type="password" name="Password"><br><br>
         <input type="submit" value="Submit">
     </form>
 </div>
