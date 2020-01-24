@@ -12,13 +12,13 @@ $title = "RentASnow - AllUser";
         <th>Nom</th>
         <th>id</th>
         <?php
-        foreach ($liste as $user){
-            echo "<tr>";
-             echo "<td> $user[Prenom]</td>";
-            echo "<td> $user[Nom]</td>";
-            echo "<td> $user[id]</td>";
-echo "</tr>";
-        }
+        foreach ($liste as $user){  ?>
+            <tr>
+             <td>  <?= $user["Prenom"] ?></td>
+            <td>  <?= $user["Nom"]  ?></td>
+           <td>  <?= $user["id"]  ?></td>
+</tr>
+        <?php   }
         ?>
     </table>
     <form action="/index.php?action=ChangeUser" method="post">

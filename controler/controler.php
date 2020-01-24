@@ -6,24 +6,26 @@ require_once 'model/model.php';
 
 // This file contains nothing but functions
 
+
+// Affiche la page home
 function home()
 {
     $news = getNews();
     require_once 'view/home.php';
 }
-
+// Affiche la liste des sonws
 function displaySnows()
 {
     $snows = getSnows();
     require_once 'view/DisplaySnow.php';
 
 }
-
+// Affiche la page connection
 function Connect()
 {
     require_once 'view/Connect.php';
 }
-
+// Vas Check si les données entrée coresponde aux donée deja enrgistrée
 function TryConnect()
 {
     $Accounts = getName();
@@ -51,18 +53,18 @@ function TryConnect()
 
 
 }
-
+// Supprime les valeurs enrgistrées et retours a la page d 'acceuille
 function DisConnect()
 {
     session_unset();
     home();
 }
-
+// affiche une page de compte
 function Compte()
 {
     require_once 'view/Compte.php';
 }
-
+// Permet de crée et ajouter un nouveau compte aux fichier de donnée
 function NewAcc()
 {
     if (isset($_POST["PrenomR"]) && isset($_POST["NomR"]) && isset($_POST["PasswordR"]) && $_POST["PrenomR"] != "" && $_POST["NomR"] != "" && $_POST["PasswordR"] != "") {
@@ -86,14 +88,17 @@ function NewAcc()
     unset($_POST["NomR"]);
     unset($_POST["PasswordR"]);
 }
+// affichier la liste des users
 function AllUser(){
     $liste = getName();
     require_once 'view/AllUser.php';
 }
+// Affiche la page pour changer les utilisateurs
 function ChangeUser(){
     $liste = getName();
     require_once 'view/ChangeUser.php';
 }
+//Function permetant de supprimé un utilisateurs
 function DelUser(){
 
     $liste = getName();
@@ -107,6 +112,7 @@ $i=0;
     }
     ChangeUser();
 }
+//Function Premetant de changer le mot de passe de l'utilisateurs
 function Changemdp(){
     $liste = getName();
     $i=0;
@@ -115,9 +121,7 @@ function Changemdp(){
             $liste[$i] = ["id" => $user["id"], "Prenom" => $user["Prenom"], "Nom" => $user["Nom"], "Password" => $_POST["NewPassword"]];
             ChangeAcc($liste);
             $_SESSION['Password']=$_POST["NewPassword"];
-            var_dump($user["id"]);
         }
-        var_dump($_SESSION["id"]);
         $i++;
     }
     Compte();

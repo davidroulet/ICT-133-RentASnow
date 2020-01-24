@@ -14,17 +14,17 @@ $title = "RentASnow - AllUser";
 
         <th> Btn </th>
         <?php
-        foreach ($liste as $user){
-            echo "<tr>";
-             echo "<td> $user[Prenom]</td>";
-            echo "<td> $user[Nom]</td>";
-            echo "<td> $user[id]</td>";
-            if ($user["Nom"]=="admin"){
+        foreach ($liste as $user){  ?>
+            <tr>
+             <td> <?=$user["Prenom"]?></td>
+           <td> <?=$user["Nom"]?></td>
+           <td> <?=$user["id"]?></td>
+                <?php if ($user["Nom"]=="admin"){ // Enleve le bouton supp Pour l'user admin
             }else {
                 echo "<td> <form action=\"/index.php?action=DelUser\" method=\"post\"> <button name=$user[id] class='btn-danger'>Supp</button> </form></td>";
-            }
-echo "</tr>";
-        }
+            }?>
+            </tr>
+        <?php    }
         ?>
     </table>
 
